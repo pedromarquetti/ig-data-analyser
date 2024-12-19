@@ -1,5 +1,8 @@
 # private data that shouldn't be shared
 /data
+*.csv
+*.json
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
