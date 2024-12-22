@@ -6,5 +6,19 @@
 
 ## Running
 
-1. Put one Json file in ./data
-1. run main.py
+### Arguments
+
+```bash
+
+Instagram data analyser
+
+options:
+  -h, --help  show this help message and exit
+  -m          Read messages file (defaults to ./data/message_1.json)
+  -f F        Specify file to be read, defaults to ./data/message_01.json
+
+```
+
+### Running on linux 
+
+`python3 -m ` 
