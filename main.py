@@ -39,6 +39,8 @@ def messages_mode(file):
     df = pd.DataFrame(data)
     df['timestamp_ms'] = pd.to_datetime(df['timestamp_ms'],unit='ms')
 
+    content = df['content'].value_counts()
+
     print(f'análise de mensagens de {" - ".join(participants)}')    
 
     total_msg = df['sender_name'].count()
@@ -47,6 +49,9 @@ def messages_mode(file):
 
     print('Número de mensagens por participante')
     print(df['sender_name'].value_counts().to_string(header=False))
+
+    print("message content analysis: \n")
+    print(content.head())
 
     month_groups = df.groupby(df['timestamp_ms'].dt.month).size()
 
@@ -58,10 +63,12 @@ def messages_mode(file):
     plt.xticks(range(1, 13), ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'])
     for i,v in enumerate(month_groups):
         plt.text(i,v +0.5 , str(v),ha='center')
-    plt.show()
-    #
+    # plt.show()
+
     # save data to csv
-    # df.to_csv('dados.csv')
+    # df.to_csv(f'dados_{"_".join(participants)}.csv')
+    # save img file
+    # plt.savefig(f'{"_".join(participants)}')
 
 
 # def read_dir(path): # TODO: implement a instagram data dir analyser
