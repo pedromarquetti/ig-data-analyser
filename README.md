@@ -21,4 +21,4 @@ options:
 
 ### Running on linux 
 
-`python3 -m ` 
+`python3 -m -f <JSON file containing IG data>` 
