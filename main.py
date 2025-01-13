@@ -1,6 +1,5 @@
 from os.path import isfile
 import os
-from numpy._typing import _UnknownType
 import pandas as pd 
 import matplotlib.pyplot as plt
 import json 
@@ -74,7 +73,6 @@ def messages_mode(file):
     # save img file
     # plt.savefig(f'{"_".join(participants)}')
 
-
 def read_dir(path=DEFAULT_IG_DATAPATH): 
     """Runs messages analysis on data/your_instagram_activity/messages/inbox/"""
     data= []
@@ -98,7 +96,6 @@ def read_dir(path=DEFAULT_IG_DATAPATH):
     #     if filename.endswith('.json'):
     #         with open(f'{path}/{filename}') as fread:
 
-
 def analyse_all_msgs(file=DEFAULT_IG_DATAPATH):
     data = read_dir(file)
 
@@ -114,8 +111,6 @@ def analyse_all_msgs(file=DEFAULT_IG_DATAPATH):
     plt.figure(figsize=(10,6))
     senders.plot(kind='bar')
     plt.show()
-
-
 
 def write_to_file():
     with open(DEFAULT_WRITE_FILE,'w') as fwrite:
